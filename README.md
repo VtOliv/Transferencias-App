@@ -1,59 +1,112 @@
-# TransfersApp
+# 💸 Financial Transfer Scheduler
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Esta aplicação permite o agendamento de transferências financeiras entre contas, com cálculo automático de taxas, datas e validações completas. Desenvolvida com **Spring Boot (Java 11)** no backend e **Angular 19 + PrimeNG** no frontend.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📦 Tecnologias Utilizadas
 
-```bash
-ng serve
-```
+### Backend (Java 11 + Spring Boot)
+- Spring Web
+- Spring Data JPA
+- H2 Database (em memória)
+- Lombok
+- CORS Configuration
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Frontend (Angular 19)
+- Angular Standalone APIs
+- PrimeNG 19.1.3
+- PrimeIcons
+- Formulários Reativos com Validação
+- InputMask e InputNumber
+- Responsividade com SCSS
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Como Executar
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Backend
 
 ```bash
-ng build
+cd backend
+./mvnw spring-boot:run
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+O backend estará disponível em: `http://localhost:8080`
 
-## Running unit tests
+Endpoints:
+- `GET /transfers` → lista todas as transferências
+- `POST /transfers` → agendar nova transferência
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Frontend
 
 ```bash
-ng test
+cd frontend
+npm install
+npm run start
 ```
 
-## Running end-to-end tests
+O frontend estará disponível em: `http://localhost:4200`
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
+## 📋 Funcionalidades
+
+- ✅ Cadastro de transferências com:
+  - Conta de origem e destino com máscara (XXXXXXX-X)
+  - Valor com máscara monetária brasileira
+  - Validação de campos obrigatórios
+  - Data futura de transferência
+
+- ✅ Listagem das transferências já agendadas
+
+- ✅ Taxa calculada automaticamente de acordo com as regras definidas no backend
+
+- 🌐 Suporte ao idioma e formatação `pt-BR`
+
+---
+
+## 🖥️ Estrutura do Projeto
+
+```
+transfers-app/
+├── backend/
+│   ├── src/main/java/... (Spring Boot)
+│   └── application.properties
+├── frontend/
+│   ├── src/app/
+│   │   ├── transfer-form/ (Formulário)
+│   │   ├── transfer-list/ (Tabela)
+│   │   └── app.routes.ts / app.component.ts
+│   └── styles.scss
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📷 Capturas de Tela
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Formulário
+> Agende novas transferências com validação e máscara
+
+### Lista
+> Visualize as transferências já programadas
+
+---
+
+## 🛠️ TODO
+
+- [ ] Adicionar filtros por data e valor na listagem
+- [ ] Implementar autenticação
+- [ ] Persistência em banco de dados real (PostgreSQL)
+
+---
+
+## 🤝 Contribuição
+
+Sinta-se à vontade para abrir PRs, relatar bugs ou sugerir melhorias.
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.

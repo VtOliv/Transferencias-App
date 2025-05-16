@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 1rem;
+    background-color: #b6b8b9;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+  
+      label {
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+  
+      .text-danger {
+        color: #dc3545;
+        font-size: 0.85rem;
+        margin-top: 0.25rem;
+      }
+
+      p-datepicker {
+        margin-left: 10px;
+      }
+    }
+  
+    button {
+      width: 100%;
+    }
+  }

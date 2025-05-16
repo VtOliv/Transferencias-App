@@ -1,0 +1,34 @@
+<p-table
+  [value]="transfers"
+  [paginator]="true"
+  [rows]="10"
+  [responsiveLayout]="'scroll'"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} transferências"
+  [rowsPerPageOptions]="[5,10,20]"
+  class="p-datatable-sm">
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Conta Origem</th>
+      <th>Conta Destino</th>
+      <th>Valor</th>
+      <th>Taxa</th>
+      <th>Data Agendamento</th>
+      <th>Data da Transferência</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-transfer>
+    <tr>
+      <td>{{ transfer.id }}</td>
+      <td>{{ transfer.sourceAccount }}</td>
+      <td>{{ transfer.destinationAccount }}</td>
+      <td>{{ transfer.amount | currency: 'BRL':'symbol':'1.2-2':'pt-BR' }}</td>
+      <td>{{ transfer.fee | currency: 'BRL':'symbol':'1.2-2':'pt-BR' }}</td>
+      <td>{{ transfer.schedulingDate | date: 'shortDate' }}</td>
+      <td>{{ transfer.transferDate | date: 'shortDate' }}</td>
+    </tr>
+  </ng-template>
+</p-table>

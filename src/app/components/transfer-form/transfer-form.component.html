@@ -1,0 +1,56 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid">
+  <div class="field mb-3">
+    <label class="form-label">Conta Origem</label>
+    <p-inputMask
+      formControlName="sourceAccount"
+      mask="9999999-9"
+      placeholder="Digite a conta origem"
+      class="p-inputtext-sm"
+      required>
+    </p-inputMask>
+    <div *ngIf="form.get('sourceAccount')?.invalid && form.get('sourceAccount')?.touched" class="text-danger">
+      Conta deve conter 8 dígitos no formato XXXXXXX-X
+    </div>
+  </div>
+
+  <div class="field mb-3">
+    <label class="form-label">Conta Destino</label>
+    <p-inputMask
+      formControlName="destinationAccount"
+      mask="9999999-9"
+      placeholder="Digite a conta destino"
+      class="p-inputtext-sm"
+      required>
+    </p-inputMask>
+    <div *ngIf="form.get('destinationAccount')?.invalid && form.get('destinationAccount')?.touched" class="text-danger">
+      Conta deve conter 8 dígitos no formato XXXXXXX-X
+    </div>
+  </div>
+
+  <div class="field mb-3">
+    <label class="form-label">Valor</label>
+    <p-inputNumber
+      formControlName="amount"
+      mode="currency"
+      currency="BRL"
+      locale="pt-BR"
+      inputId="amount"
+      class="p-inputtext-sm"
+      placeholder="Digite o valor da transferência"
+      required>
+    </p-inputNumber>
+  </div>
+
+  <div class="field mb-3">
+    <label class="form-label">Data da transferência</label>
+    <p-datepicker 
+      formControlName="transferDate" 
+      dateFormat="dd/mm/yy" 
+      [iconDisplay]="'input'" 
+      [showIcon]="true" 
+      inputId="icondisplay" 
+      placeholder="Escolha a data" />
+  </div>
+
+  <button pButton type="submit" label="Agendar" severity="secondary" [disabled]="form.invalid"></button>
+</form>
