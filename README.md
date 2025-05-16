@@ -1,4 +1,4 @@
-# 💸 Financial Transfer Scheduler
+# 💸 App para Agendamento de Transferências
 
 Esta aplicação permite o agendamento de transferências financeiras entre contas, com cálculo automático de taxas, datas e validações completas. Desenvolvida com **Spring Boot (Java 11)** no backend e **Angular 19 + PrimeNG** no frontend.
 
@@ -32,7 +32,7 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
-O backend estará disponível em: `http://localhost:8080`
+O backend estará disponível em: `https://github.com/VtOliv/Transferencias-Service`
 
 Endpoints:
 - `GET /transfers` → lista todas as transferências
@@ -94,20 +94,8 @@ transfers-app/
 ![Tela de extrato de transferências](./src/assets/extrato.png)
 ---
 
-## 🛠️ TODO
-
-- [ ] Adicionar filtros por data e valor na listagem
-- [ ] Implementar autenticação
-- [ ] Persistência em banco de dados real (PostgreSQL)
-
----
-
 ## 🤝 Contribuição
 
 Sinta-se à vontade para abrir PRs, relatar bugs ou sugerir melhorias.
 
 ---
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT.
