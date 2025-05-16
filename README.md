@@ -87,10 +87,11 @@ transfers-app/
 
 ### Formulário
 > Agende novas transferências com validação e máscara
+![Tela de agendamento](./src/assets/form.png)
 
 ### Lista
 > Visualize as transferências já programadas
-
+![Tela de extrato de transferências](./src/assets/extrato.png)
 ---
 
 ## 🛠️ TODO
